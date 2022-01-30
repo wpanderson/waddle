@@ -60,33 +60,25 @@ def get_stats(word_list):
                 index += 1
 
     # Print all letters
-    print("## ALL STATS ##")
+    print("## ALL LETTERS BY POSITION ##")
     for l in string.ascii_lowercase:
         print(l, letter_results[l])
 
-    print("## GET BEST 5 LETTERS FOR EACH SLOT ##")
+    print("## BEST 5 LETTERS FOR EACH POSITION ##")
     slot_results = {}
     for i in range(5):
         temp_sort = sorted(letter_results.items(), key=lambda v:v[1][i], reverse=True)
         # print(temp_sort)
-        print(temp_sort[0:5])
+        # print(f"BEST LETTERS FOR SLOT {i}")
+        # for x in range(temp_sort[0:5]):
+        #     print(x)
+        print(f"Letter {i+1}")
+        for x in temp_sort[0:5]:
+            print(x[0], x[1][i])
         
+    # print("TOP STARTING WORDS")
 
 
-        # highest_amount = 0
-        # highest_letter = ''
-        # for l in string.ascii_lowercase:
-        #     # print(letter_results[l][i])
-        #     if letter_results[l][i] > highest_amount:
-        #         highest_letter = l
-        #         highest_amount = letter_results[l][i]
-        # print(f"{i+1}: {highest_letter}: {highest_amount}")
-
-
-
-
-
-    return letter_results
 
 if __name__ == '__main__':
     """
